@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 29 - Text Operation</title>
+    <style>
+        body{
+            text-align: center;
+            background-color:#b3cccc;
+        }
+        input{
+            width: 350px;
+            height: 42px;
+            border-radius: 7px;
+            border: none;
+            color: black;
+        }
+        button{
+            width: 130px;
+            padding: 6px;
+            border-radius: 20px;
+            border: none;
+            font-size: 15px;
+            background-color: #75a3a3;
+        }
+        @media (max-width:480px){
+            input{
+                width: 280px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <br><br><br>
+    <input type="text" id="text" placeholder="Enter Text">
+    <br><br>
+    <input type="text" id="output" placeholder="Output">
+    <br><br><br>
+
+    <div class="btn-container">
+        <button type="button" onclick="lowercase()">Lower Case</button>&nbsp;
+        <button type="button" onclick="uppercase()">Upper Case</button>
+        <br><br>
+        <button type="button" onclick="wordcount()">Word Count</button>&nbsp;
+        <button type="button" onclick="charactercount()">Character Count</button>
+    </div>
+
+    <script>
+        const input=document.getElementById("text");
+        const output=document.getElementById("output");
+        function lowercase(){
+           const inputtext=input.value;
+           output.value=inputtext.toLowerCase();
+        }
+
+        function uppercase(){
+            const inputtext=input.value;
+            output.value=inputtext.toUpperCase();
+        }
+
+        function wordcount(){
+            const inputtext=input.value;
+            const words=inputtext.split(" ").length;
+            output.value=words;
+        }
+
+        function charactercount(){
+            const inputtext=input.value;
+            output.value=inputtext.length;
+        }
+    </script>
+</body>
+</html>
